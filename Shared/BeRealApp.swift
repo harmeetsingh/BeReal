@@ -9,9 +9,20 @@ import SwiftUI
 
 @main
 struct BeRealApp: App {
+    
+    private let appCoordinator: AppCoordinatoring
+    private let loginCoordinator: LoginCoordinatoring
+    
+    init() {
+        appCoordinator = AppCoordinator()
+        loginCoordinator = appCoordinator.makeLogin()
+    }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                loginCoordinator.rootView()
+            }
         }
     }
 }
