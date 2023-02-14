@@ -22,9 +22,9 @@ The general approach of data flow is below:
 - View (4) <- ViewModel (3) <- Repository (2) <- NetworkSession (1)
 
 1. NetworkSession decodes the data and returns a model or error.
-2. Repository forwards the model or data.
+2. Repository forwards the model or error.
 3. ViewModel will update it's viewState property to either loaded or failed. The viewState change will publish to the View.
-4. View reacts to the published change and redraws the body.
+4. View reacts to the published change and recreates the body.
 
 ### Features
 
@@ -39,4 +39,4 @@ I've not added a unit test for ImageDetailsViewModel or any of the Coordinators 
 
 ### Misc
 
-TODOs - I've left these in the project to explain how I would implement this in a real project and if I had more time. 
+TODOs - I've left these in the project for areas which I would improve if I had more time. 
